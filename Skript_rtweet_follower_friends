@@ -1,0 +1,23 @@
+## install rtweet from CRAN
+install.packages("rtweet")
+
+## load rtweet package
+library(rtweet)
+## access token method: create token and save it as an environment variable
+create_token(
+  app = "man_darf_das_so_sagen",
+  consumer_key = "WOGExxcLA2Fi5EzQcUe0wCAza",
+  consumer_secret = "aewUFvWbBUrBuxqvlxa8VHC7AxhkYIHae42vxOLu8ST66wrdIe",
+  access_token = "1086246166180831232-t35MDQrivD64OLKrKeBHP4qn10lOzB",
+  access_secret = "3g3NsFpbcFlHHS0UT4cUUGIaD4tg7qEOM89C9Jw1aclBi")
+## get user IDs of accounts followed by IBDeutschland
+IBDeutschland <- get_friends("IBDeutschland")
+
+## lookup data on those accounts
+IBDeutschland_data <- lookup_users(IBDeutschland$user_id)
+## Not run:
+## get friends list for user with the handle "IBDeutschland"
+get_friends(("IBDeutschland"))
+## as_screenname coerces all elements to class "screen_name"
+sns <- get_friends (c("IBDeutschland", "AfD", "IBSchwaben"))
+class(sns)
