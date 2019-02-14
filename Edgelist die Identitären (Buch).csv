@@ -1,0 +1,29 @@
+from,to,relation
+Kubitschek,JF,11
+Kubitschek,SZS,5
+Kubitschek,Verlag A,12
+Weissmann,JF,11
+Menzel,BNA,5
+Duke,IBDE,NA
+Krebs,IBDE,NA
+Willinger,IBDE,NA
+Gerber,IBDE,1
+Altmieks,IBDE,12
+Zeilinger,IBDE,NA
+Kohlmann,IBDE,NA
+Elbin,IBDE,1
+Schueller,BNA,11
+Schueller,IBB,1
+Augener,IBDE,1
+Hackmann,IBDE,13
+Schibblock,IBDE,13
+Dittmer,IBDE,1
+EPL,IBDE,NA
+SZS,IBDE,NA
+Lichtmesz,SZS,11
+Ulbricht,JF,11
+JF,IBDE,NA
+Verlag A,IBDE,NA
+BNA,IBDE,NA
+IBB,IBDE,NA
+AS Verlag,IBDE,NA
