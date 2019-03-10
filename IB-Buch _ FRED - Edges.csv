@@ -30,7 +30,7 @@ IBDE,AR,3,2
 IBOE,EPL,3,2
 IFS,SUWA,12,2
 IFS,SZS,12,2
-IFS,SZSde,12,2
+IFS,SZSDE,12,2
 JF,IBDE,3,2
 Weissmann,IFS,16,2
 Kaupert,Sellner,3,2
@@ -97,7 +97,7 @@ Sellner,VerlagA,11,2
 Sellner,JF,3,2
 Sellner,IFS,5,2
 Sellner,Pettibone,3,2
-Sellner,SZSde,11,2
+Sellner,SZSDE,11,2
 Sellner,CP,3,2
 Sellner,Noe,3,2
 Stein1,JF,12,2
