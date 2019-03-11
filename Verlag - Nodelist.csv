@@ -1,0 +1,102 @@
+id,name,sex,type,age
+VerlagA,Verlag Antaios,99,2,99
+Tillschneider,HansThomas Tillschneider,2,1,5
+RING,RING,99,2,99
+Bystron,Petr Bystron,2,1,5
+Bosselmann,Heino Bosselmann,2,1,99
+Stegemann,Bernd Stegemann,2,1,99
+Oery,Mariann Oery,1,1,99
+Tichy,Roland Tichy,2,1,6
+Novak,Arndt Novak,2,1,99
+FMagazin,FreilichMagazin,99,2,99
+Berg,HansJoachim Berg,2,1,6
+EIF,eigentümlich frei,99,2,99
+Poensgen,Johannes Konstantin Poensgen,2,1,99
+WOA,wochenblick.at,99,2,99
+BDK,Bibliothek des Konservatismus,99,2,99
+Yilmaz,Kemal Cem Yilmaz,2,1,99
+Lusinchi,Patrick Lusinchi,2,1,99
+Eysseric,Pascal Eysseric,2,1,99
+REE,revue éléments,99,2,99
+BON,Boersenblatt News,99,2,99
+FRB,FrankfurterBuchmesse,99,2,99
+Bender,Justus Bender,2,1,4
+Lau,Mariam Lau,1,1,5
+Hermann,Jonas Hermann,2,1,99
+Serrao,Marc Felix Serrao,2,1,99
+M,Fanziska M,1,1,99
+1P,einprozent.de,99,2,99
+Gerke,Tano Gerke,2,1,4
+Dittus,Joerg Dittus,2,1,99
+Wessels,TillLucas Wessels,2,1,3
+MAN,Magazin Anbruch,99,2,99
+Hoecke,Bjoern Hoecke,2,1,5
+DT,Die Tagesstimme,99,2,99
+DE,Defend Europe,99,2,99
+Pasemann,Frank Pasemann,2,1,5
+Raskolnikow,Raskolnikow,99,99,99
+Stieferle,Regina Stieferle,1,1,99
+Rheinberger,Franz Rheinberger,2,1,99
+Kaiser1,Boris T Kaiser,2,1,99
+RVE,RenovamenVerlag,99,2,99
+Michel,Albin Michel,99,2,99
+RLV,Robert Laffont Verlag,99,2,99
+Stein,Philip Stein,2,1,3
+DEC,Der Eckart,99,2,99
+AUV,Aufbau Verlag,99,2,99
+VEE,Verteidiger Europas,99,2,99
+ARVerlag,Ares Verlag,99,2,99
+VerlagJE,Jungeuropa Verlag,99,2,99
+Kaiser2,Benedikt Kaiser,2,1,4
+Wegner,Nils Wegner,2,1,99
+ASVerlag,Arktos Verlag,99,2,99
+RGV,Regin Verlag,99,2,99
+SZSDE,Sezession im Netz,99,2,99
+IFS,Institut für Staatspolitik,99,2,99
+CP,Compact,99,2,99
+KAV,Karolinger Verlag,99,2,99
+MANU,Manuscriptum,99,2,99
+QKR,Quelltexte zur KR,99,2,99
+VBU,Verlag Bublies,99,2,99
+BNA,Blaue Narzisse,99,2,99
+EJF,Edition Junge Freiheit,99,2,99
+deBenoist,Alan de Benoist,2,1,6
+Borrmann,Norbert Borrmann,2,1,99
+Camus,Renaud Camus,2,1,6
+DiTullio,Domenico Di Tullio,2,1,5
+Donavan,Jack Donavan,2,1,5
+Fernau,Joachim Fernau,2,1,99
+Gerlich,Siegfried Gerlich,2,1,5
+Heidegger,Hermann Heidegger,2,1,6
+Hinz,Thorsten Hinz,2,1,5
+KleineHartlage,Manfred KleineHartlage,2,1,5
+Kositza,Ellen Kositza,1,1,5
+Kubitschek,Goetz Kubitschek,2,1,5
+Lange,Horst Lange,2,1,7
+Lehnert,Erik Lehnert,2,1,5
+Lichtmesz,Martin Lichtmesz,2,1,5
+Lisson,Frank Lisson,2,1,5
+Menzel,Felix Menzel,2,1,4
+Millet,Richard Millet,2,1,6
+Mohler,Armin Mohler,2,1,7
+Mohr,Volker Mohr,2,1,5
+deMontherland,Henry de Montherland,2,1,7
+Mueller1,Baal Mueller,2,1,5
+Mueller2,Mario Mueller,2,1,4
+Nolte,Ernst Nolte,2,1,6
+Pirinçci,Akif Pirinçci,2,1,5
+Raspail,Jean Raspail,2,1,6
+Scheil,Stefan Scheil,2,1,5
+Schleyer,Alexander Schleyer,2,1,4
+Scholdt,Guenter Scholdt,2,1,6
+Schueßlburner,Josef Schueßlburner,2,1,6
+Sellner,Martin Sellner,2,1,3
+Sieferle,Rolf Peter Sieferle,2,1,6
+Sommerfeld,Caroline Sommerfeld,1,1,5
+Thalheim,Raoul Thalheim,2,1,99
+Ulfkotte,Udo Ulfkotte,2,1,7
+Vonderach,Andreas Vonderach,2,1,5
+vonWaldstein,Thor von Waldstein,2,1,5
+Weißmann,Karlheinz Weißmann,2,1,5
+Willms,Bernard Willms,2,1,7
+Zehm,Guenter Zehm,2,1,6
