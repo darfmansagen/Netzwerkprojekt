@@ -6,11 +6,11 @@ Bystron,Petr Bystron,2,1,5
 Classen,Robin Classen,2,1,3
 Elsaesser,Juergen Elsaesser,2,1,6
 Fiss,Daniel Fiss,2,1,2
-Hilde,Helge Hilde,2,1,NA
+Hilde,Helge Hilde,2,1,99
 Hoecke,Bjoern Hoecke,2,1,5
 Hoffgaard,Henning Hoffgaard,2,1,4
 Homilius,Kai Homilius,2,1,5
-Kaupert,Simon Kaupert,2,1,NA
+Kaupert,Simon Kaupert,2,1,99
 Kneller,Maximilian Kneller,2,1,2
 Koschkar,Felix Koschkar,2,1,3
 Kositza,Ellen Kositza,1,1,5
@@ -20,14 +20,14 @@ Lenart,Patrick Lenart,2,1,4
 Lichert,Andreas Lichert,2,1,5
 Magnitz,Frank Magnitz,2,1,6
 Mandic,Dubravko Mandic,2,1,4
-Mergard,Marvin Mergard,2,1,NA
+Mergard,Marvin Mergard,2,1,99
 Mueller,Mario Alexander Mueller,2,1,4
 Munier,Dietmar Munier,2,1,6
-Noe,Yannick Noe,2,1,NA
+Noe,Yannick Noe,2,1,99
 Pettibone,Brittany Pettibone,1,1,3
 Poggenburg,Andre Poggenburg,2,1,5
-Schick,Jonas Schick,2,1,NA
-Schleyer,Alexander Schleyer,2,1,NA
+Schick,Jonas Schick,2,1,99
+Schleyer,Alexander Schleyer,2,1,99
 Schmidt,Jan-Wenzel Schmidt,2,1,3
 Sebbin,Daniel Sebbin,2,1,3
 Sellner,Martin Sellner,2,1,3
@@ -37,7 +37,7 @@ Steinke,Lars Steinke,2,1,2
 Tassis,Alexander Tassis,2,1,5
 Teske,Robert Teske,2,1,3
 Tillschneider,Hans-Thomas Tillschneider,2,1,5
-Wagner,Christian Wagner,2,1,NA
+Wagner,Christian Wagner,2,1,99
 Weber,Eric Weber,2,1,5
 Weissmann,Karlheinz Weissmann,2,1,5
 Weyel,Harald Weyel,2,1,5
@@ -45,38 +45,38 @@ Willinger,Markus Willinger,2,1,3
 Wychera,Alina Wychera,1,1,3
 Zeilinger,Sebastian Zeilinger,2,1,4
 Zuendel,Ernst Zuendel,2,1,6
-IBDE,Identitaere Bewegung Deutschland,NA,2,NA
-AFD,Alternative fuer Deutschland,NA,2,NA
-AR,Arcadi,NA,2,NA
-ARM,Arminia,NA,2,NA
-BNA,Blaue Narzisse,NA,2,NA
-CP,Compact,NA,2,NA
-DE,Defend Europe,NA,2,NA
-DES,Deutsche Stimme,NA,2,NA
-DIG,Die identitaere Generation,NA,2,NA
-EPL,Ein Prozent fuer unser Land,NA,2,NA
-FPOE,Freiheitliche Partei Oesterreichs,NA,2,NA
-HDJ,Heimattreue Deutsche Jugend,NA,2,NA
-IBOE,Identitaere Bewegung Oesterreich,NA,2,NA
-IFS,Institut fuer Staatspolitik,NA,2,NA
-JA,Junge Alternative,NA,2,NA
-VerlagJE,Jungeuropa Verlag,NA,2,NA
-JF,Junge Freiheit,NA,2,NA
-JN,Junge Nationalisten,NA,2,NA
-KK,Kontra Kultur,NA,2,NA
-KSA,Konservativ-subversive Aktion,NA,2,NA
-KV,Kopp-Verlag,NA,2,NA
-LEGIDA,LEGIDA,NA,2,NA
-LUSR,Lesen und Schenken,NA,2,NA
-MK,Mosaik Kommunikation,NA,2,NA
-NPD,Nationaldemokratische Partei Deutschlands,NA,2,NA
-PEGIDA,PEGIDA,NA,2,NA
-PI,Pils Identitaer,NA,2,NA
-PIN,PI News,NA,2,NA
-PAPL,Patriotische Plattform,NA,2,NA
-RF,Radikal feminin,NA,2,NA
-SASI,Saxo-Silesia,NA,2,NA
-SUWA,Sommer- und Winterakademie,NA,2,NA
-SZS,Sezession,NA,2,NA
-SZSDE,sezession.de,NA,2,NA
-VerlagA,Verlag Antaois,NA,2,NA
+IBDE,Identitaere Bewegung Deutschland,99,2,99
+AFD,Alternative fuer Deutschland,99,2,99
+AR,Arcadi,99,2,99
+ARM,Arminia,99,2,99
+BNA,Blaue Narzisse,99,2,99
+CP,Compact,99,2,99
+DE,Defend Europe,99,2,99
+DES,Deutsche Stimme,99,2,99
+DIG,Die identitaere Generation,99,2,99
+EPL,Ein Prozent fuer unser Land,99,2,99
+FPOE,Freiheitliche Partei Oesterreichs,99,2,99
+HDJ,Heimattreue Deutsche Jugend,99,2,99
+IBOE,Identitaere Bewegung Oesterreich,99,2,99
+IFS,Institut fuer Staatspolitik,99,2,99
+JA,Junge Alternative,99,2,99
+VerlagJE,Jungeuropa Verlag,99,2,99
+JF,Junge Freiheit,99,2,99
+JN,Junge Nationalisten,99,2,99
+KK,Kontra Kultur,99,2,99
+KSA,Konservativ-subversive Aktion,99,2,99
+KV,Kopp-Verlag,99,2,99
+LEGIDA,LEGIDA,99,2,99
+LUSR,Lesen und Schenken,99,2,99
+MK,Mosaik Kommunikation,99,2,99
+NPD,Nationaldemokratische Partei Deutschlands,99,2,99
+PEGIDA,PEGIDA,99,2,99
+PI,Pils Identitaer,99,2,99
+PIN,PI News,99,2,99
+PAPL,Patriotische Plattform,99,2,99
+RF,Radikal feminin,99,2,99
+SASI,Saxo-Silesia,99,2,99
+SUWA,Sommer- und Winterakademie,99,2,99
+SZS,Sezession,99,2,99
+SZSDE,sezession.de,99,2,99
+VerlagA,Verlag Antaois,99,2,99
