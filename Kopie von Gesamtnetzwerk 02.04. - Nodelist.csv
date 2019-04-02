@@ -1,0 +1,229 @@
+id,name,sex,type,age
+AFD,Alternative für Deutschland,99,2,99
+Ahnemueller,Jens Ahnemueller,2,1,5
+Altmieks,Nils Altmieks,2,1,3
+AR,Arcadi,99,2,99
+ARM,Arminia,99,2,99
+Arppe,Holger Arppe,2,1,5
+ARVerlag,Aris Verlag,99,2,99
+ASVerlag,Arktos Verlag,99,2,99
+Augener,Nando Dragan Augener,2,1,99
+Augustin,Dennis Augustin,2,1,5
+Austin,Benjamin Austin,2,1,99
+AUV,Aufbau Verlag,99,2,99
+Bachmann,Lutz Bachmann,2,1,5
+Bannon,Steve Bannon,2,1,99
+BDK,Bibliothek des Konservatismus,99,2,99
+Beckamp,Roger Beckamp,2,1,5
+Behrens,Bastian Behrens,2,1,99
+Bender,Justus Bender,2,1,4
+Berg,HansJoachim Berg,2,1,6
+BNA,Blaue Narzisse,99,2,99
+BON,Boersenblatt News,99,2,99
+Borrmann,Norbert Borrmann,2,1,99
+Bosselmann,Heino Bosselmann,2,1,99
+Bothe,Stefan Bothe,2,1,4
+Braun,Christina Braun,1,1,99
+Brodbeck,Moritz Brodbeck,2,1,99
+BTP,Burschenschaft Teutonia Prag,Na,2,99
+BUBL,Burschenschaftlichen Blaetter,99,2,99
+Bussmann,Joel Bussmann,2,1,2
+BUW,Bundeswehr,99,2,99
+Bystron,Petr Bystron,2,1,5
+Camus,Renaud Camus,2,1,6
+Classen,Robin Classen,2,1,3
+CP,Compact,99,2,99
+CPO,CasaPound,99,2,99
+DB,Deutsche Burschenschaft,99,2,99
+DBM,Burschenschaft Danubia München,99,2,99
+DE,Defend Europe,99,2,99
+deBenoist,Alan de Benoist,2,1,6
+DEC,Der Eckart,99,2,99
+deMontherland,Henry de Montherland,2,1,7
+DES,Deutsche Stimme,99,2,99
+DG,Deutsche Gildenschaft,99,2,99
+Dittmer,Melanie Dittmer,1,1,99
+Dittus,Joerg Dittus,2,1,99
+DiTullio,Domenico Di Tullio,2,1,5
+Donavan,Jack Donavan,2,1,5
+DRB,Die Republikaner ,99,2,99
+DT,Die Tagesstimme,99,2,99
+Duke,David Duke,2,1,6
+EIF,eigentuemlich frei,99,2,99
+EinsP,einprozentde,99,2,99
+Elbin,Maximilian Elbin,2,1,1
+Elsaesser,Juergen Elsaesser,2,1,6
+EPL,Ein Prozent fuer unser Land,99,2,99
+Eysseric,Pascal Eysseric,2,1,99
+Faetke,Sebastian Faetke,2,1,4
+Fernau,Joachim Fernau,2,1,99
+Fiss,Daniel Fiss,2,1,2
+FMagazin,FreilichMagazin,99,2,99
+FPOE,Freiheitliche Partei Oesterreichs,99,2,99
+FRB,FrankfurterBuchmesse,99,2,99
+Gauland,Alexander Gauland,2,1,6
+Gerber,Tony Gerber,2,1,4
+Gerke,Tano Gerke,2,1,4
+Gerlich,Siegfried Gerlich,2,1,5
+Grass,Guenter Grass,2,1,7
+Hackmann,Andreas Hackmann,2,1,99
+Haerle,Carsten Haerle,2,1,5
+HDJ,Heimattreue Deutsche Jugend,99,2,99
+Heidegger,Hermann Heidegger,2,1,6
+Herfurth,Mirella Herfurth,1,1,99
+Hermann,Jonas Hermann,2,1,99
+Hilde,Helge Hilde,2,1,99
+Hinz,Thorsten Hinz,2,1,5
+Hoecke,Bjoern Hoecke,2,1,5
+Hoffgaard,Henning Hoffgaard,2,1,4
+Hoffmann,Karl Heinz Hoffmann,2,1,7
+Hohm,Jean Pascal Hohm,2,1,99
+Hohmann,Martin Hohmann,2,1,6
+Homilius,Kai Homilius,2,1,5
+IBB,Identitaere Bewegung Brandenburg,99,2,99
+IBDE,Identitaere Bewegung Deutschland,99,2,99
+IBOE,Identitaere Bewegung Oesterreich,99,2,99
+IFS,Institut fuer Staatspolitik,99,2,99
+JA,Junge Alternative,99,2,99
+Jaecker,Patrick Jaecker,2,1,99
+JF,Junge Freiheit,99,2,99
+JLO,Jungen Landsmannschaft Ostpreussen,99,2,99
+JN,Junge Nationalisten,99,2,99
+KaiserA,Boris T Kaiser,2,1,99
+KaiserB,Benedikt Kaiser,2,1,4
+Kalbitz,Andreas Kalbitz,2,1,5
+Kaupert,Simon Kaupert,2,1,99
+KAV,Karolinger Verlag,99,2,99
+Kirchner,Oliver Kirchner,2,1,5
+KK,Kontra Kultur,99,2,99
+KleineHartlage,Manfred KleineHartlage,2,1,5
+Kneller,Maximilian Kneller,2,1,2
+Koenig,Enrico Koenig,2,1,99
+Kohlmann,Martin Kohlmann,2,1,99
+Koschkar,Felix Koschkar,2,1,4
+Kositza,Ellen Kositza,1,1,5
+Krebs,Pierre Krebs,2,1,99
+KSA,Konservativsubversive Aktion,99,2,99
+Kubitschek,Goetz Kubitschek,2,1,5
+KV,KoppVerlag,99,2,99
+Lange,Horst Lange,2,1,7
+Lau,Mariam Lau,1,1,5
+LEGIDA,LEGIDA,99,2,99
+Lehnert,Erik Lehnert,2,1,5
+Lichert,Andreas Lichert,2,1,5
+Lichtmesz,Martin Lichtmesz,2,1,5
+Lisson,Frank Lisson,2,1,5
+LR,Lega Rom,99,2,99
+Lucke,Bernd Lucke,2,1,5
+Lusinchi,Patrick Lusinchi,2,1,99
+LUSR,Lesen und Schenken,99,2,99
+LVerlag,Loci Verlag,99,2,99
+M,Fanziska M,1,1,99
+Magnitz,Frank Magnitz,2,1,6
+Maier,Jens Maier,2,1,5
+MAN,Magazin Anbruch,99,2,99
+Mandic,Dubravkco Mandic,2,1,4
+MANU,Manuscriptum,99,2,99
+Menzel,Felix Menzel,2,1,4
+Mergard,Marvin Mergard,2,1,99
+Meuthen,Joerg Meuthen,2,1,5
+Michel,Albin Michel,99,2,99
+Millet,Richard Millet,2,1,6
+MK,Mosaik Kommunikation,99,2,99
+Mohler,Armin Mohler,2,1,7
+Mohr,Volker Mohr,2,1,5
+MuellerA,Baal Mueller,2,1,5
+MuellerB,Mario Mueller,2,1,4
+Munier,Dietmar Munier,1,1,6
+Noe,Yannick Noe,2,1,99
+Nolte,Ernst Nolte,2,1,7
+Novak,Arndt Novak,2,1,99
+NPD,Nationaldemokratische Partei Deutschlands,99,2,99
+NR,Neue Rechte,99,2,99
+Oery,Mariann Oery,1,1,99
+PAPL,Patriotische Plattform,99,2,99
+Pasemann,Frank Pasemann,2,1,5
+Paulwitz,Michael Paulwitz,2,1,5
+PE,Phalanx Europa,99,2,99
+PEGIDA,PEGIDA,99,2,99
+Pettibone,Brittany Pettibone,1,1,3
+PI,Pils Identitaer,99,2,99
+PIN,PI News,99,2,99
+Pirincci,Akif Pirincci,2,1,5
+Poensgen,Johannes Konstantin Poensgen,2,1,99
+Poggenburg,Andre Poggenburg,2,1,5
+PP,Patriotische Plattform,99,2,99
+Pryzballa,Benjamin Pryzballa,2,1,4
+QKR,Quelltexte zur KR,99,2,99
+Raepple,Stefan Raepple,2,1,4
+Raskolnikow,Raskolnikow,99,99,99
+Raspail,Jean Raspail,2,1,6
+REE,revue elements,99,2,99
+RF,Radikal feminin,99,2,99
+RGV,Regin Verlag,99,2,99
+Rheinberger,Franz Rheinberger,2,1,99
+Riefenstahl,Leni Riefenstahl,1,1,7
+RING,RING,99,2,99
+RLV,Robert Laffont Verlag,99,2,99
+RVE,RenovamenVerlag,99,2,99
+Salvini,Mateo Salvini,1,1,5
+SASI,Saxo Silesia,99,2,99
+Schachtschneider,Karl Albrecht Schachtschneider,1,1,6
+Scheil,Stefan Scheil,2,1,5
+Schibblock,Gerold Schibblock,2,1,99
+Schick,Jonas Schick,2,1,99
+Schimmer,Arne Schimmer,2,1,5
+Schleyer,Alexander Schleyer,2,1,4
+Schmidt,Jan Wenzel Schmidt,2,1,3
+Schmitt,Carl Schmitt,2,1,7
+Scholdt,Guenter Scholdt,2,1,6
+Schueller,Johannes Schueller,2,1,99
+Schuesslburner,Josef Schuesslburner,2,1,6
+Sebbin,Daniel Sebbin,2,1,3
+Sellner,Martin Sellner,2,1,3
+Serrao,Marc Felix Serrao,2,1,99
+Sieferle,Rolf Peter Sieferle,2,1,6
+Sommerfeld,Caroline Sommerfeld,1,1,5
+Stegemann,Bernd Stegemann,2,1,99
+SteinA,Dieter Stein,2,1,5
+SteinB,Philip Stein,2,1,3
+Steinke,Lars Steinke,2,1,2
+Stieferle,Regina Stieferle,1,1,99
+SUWA,Sommer und Winterakademie,99,2,99
+SZS,Sezession,99,2,99
+SZSDE,Sezession im Netz,99,2,99
+Tassis,Alexander Tassis,2,1,5
+Teske,Robert Teske,2,1,3
+Thalheim,Raoul Thalheim,2,1,99
+Tichy,Roland Tichy,2,1,6
+Tillschneider,HansThomas Tillschneider,2,1,5
+UB,Urburschenschaft,99,2,99
+Ulbrich,Roland Ulbrich,2,1,5
+Ulbricht,Stefan Ulbricht,2,1,99
+Ulfkotte,Udo Ulfkotte,2,1,7
+USBW,Universitaetssaengerschaft Barden zu Wien,99,2,99
+VBU,Verlag Bublies,99,2,99
+VEE,Verteidiger Europas,99,2,99
+Veigel,Wolfgang Veigel,2,1,99
+VerlagA,Verlag Antaios,99,2,99
+VerlagJE,Jungeuropa Verlag,99,2,99
+VI,Vlog Identitaer,99,2,99
+Vonderach,Andreas Vonderach,2,1,5
+vonWaldstein,Thor von Waldstein,2,1,5
+Wagner,Christian Wagner,2,1,99
+WBO,Wiener Burschenschaft Olympia,99,2,99
+WeberA,Eric Weber,2,1,5
+WeberB,Ralph Weber,2,1,5
+Wegner,Nils Wegner,2,1,99
+Weissmann,Karlheinz Weissmann,2,1,5
+Wessels,TillLucas Wessels,2,1,3
+Weyel,Harald Weyel,2,1,5
+Willinger,Markus Willinger,2,1,3
+Willms,Bernard Willms,2,1,7
+WOA,wochenblickat,99,2,99
+Wychera,Alina Wychera,1,1,3
+Yilmaz,Kemal Cem Yilmaz,2,1,99
+Zehm,Guenter Zehm,2,1,6
+Zeilinger,Sebastian Zeilinger,2,1,4
+ZT,zwischentags,99,2,99
+Zuendel,Ernst Zuendel,2,1,6
