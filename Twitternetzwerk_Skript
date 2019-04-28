@@ -1,0 +1,582 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r igraph installieren}
+library("igraph")
+```
+
+```{r  Twitternetzwerk darstellen}
+el <- read.csv("https://raw.githubusercontent.com/darfmansagen/Netzwerkprojekt/master/Twitter_edgelist_complete.csv", header=T, as.is=T, sep = ",")
+# Einlesen der Nodelist
+nodes <- read.csv("https://raw.githubusercontent.com/darfmansagen/Netzwerkprojekt/master/Twitter_nodelist_complete.csv", header=T, as.is=T, sep = ",")
+# Überprüfen der Daten
+head(el)
+head(nodes)
+# wandelt die Edgelist als Matrix um.
+edgematrix <-as.matrix(el)
+# ?graph_from_data_frame (erläutert den Befehl genauer)
+# erstellt ein igraph-objekt aus der Fusion von Edge- und Nodelist
+p <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=T)
+plot(p, 
+     layout=layout_nicely,
+     vertex.color=c( "red", "black")[1+(V(p)$type=="1")],
+     vertex.frame.color="white",
+     vertex.label.color="gray20",
+     vertex.label.dist=0,
+      vertex.label.font=1.5,
+      vertex.size=6,
+      edge.color="gray70",
+      edge.arrow.size=.10,
+      main="Twitternetzwerk",
+      sub="Verbindung der neuen Rechten über Twitter"
+     
+    
+)
+```
+```{r Twitter nach Degree-Wert visualisiert}
+el <- 
+read.csv("https://raw.githubusercontent.com/darfmansagen/Netzwerkprojekt/master/Twitter_edgelist_complete.csv", 
+header=T, as.is=T, sep = ",")
+nodes <- 
+read.csv("https://raw.githubusercontent.com/darfmansagen/Netzwerkprojekt/master/Twitter_nodelist_complete.csv", 
+header=T, as.is=T, sep = ",")
+library(igraph)
+head(el)
+head(nodes)
+edgematrix <-as.matrix(el)
+pe <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=F)
+library('RColorBrewer')
+deg <- degree(pe, mode = "all", normalized = TRUE)
+col=heat.colors(13)
+fine = 13
+palette = colorRampPalette(c('yellow','red'))
+graphCol=palette(fine)[as.numeric(cut(deg, breaks = fine))]
+display.brewer.all()
+plot(pe,
+      layout=layout_nicely,
+      vertex.color=graphCol,
+      vertex.frame.color="white",
+      vertex.label=NA,
+      vertex.label.color="gray20",
+      vertex.label.dist=0,
+      vertex.label.font=1.5,
+      vertex.size=6,
+      edge.color="gray70",
+      edge.arrow.size=.10,
+      main="Twitternetzwerk mit Degree",
+      sub="Verbindung der neuen Rechten über Twitter"
+      )
+```
+
+
+```{r Visualisierung mit VisNetwork}
+toVisNetworkData(p, idToLabel = TRUE)
+visIgraph(p)
+```
+```{r Twitter-Netzwerk nach Altersgruppen}
+#Akteure im Alter von 0 bis 30 Jahren 
+age1 <- delete_vertices(p, V(p)[age == "4", age == "5", age == "6", type == "2"]) 
+age1 
+plot(age1, 
+layout=layout_nicely, 
+vertex.label.color="gray20", 
+vertex.size=12, 
+vertex.color="indianred1", 
+vertex.frame.color="white", 
+edge.color="gray70", 
+vertex.label.dist=0, 
+vertex.label.fond=1.5, 
+edge.arrow.size=.2, 
+main="Akteure von 0 bis 30 Jahren" 
+) 
+#Akteure im Alter ab 31 Jahren, keine Verstorbenen, da Twitter-Netzwerk 
+age2 <- delete_vertices(p, V(p)[age == "1", age == "2", age == "3", type == "2"]) 
+age2 
+plot(age2, 
+layout=layout_nicely, 
+vertex.label.color="gray20", 
+vertex.size=12, 
+vertex.color="indianred1", 
+vertex.frame.color="white", 
+edge.color="gray70", 
+vertex.label.dist=0, 
+vertex.label.fond=1.5, 
+edge.arrow.size=.2, 
+main="Akteure ab 31 Jahren" 
+) 
+```
+
+
+```{r Frauen im Netzwerk}
+#Alle Männer und Organisationen aus dem Netzwerk isolieren
+women <- delete_vertices(p, V(p)[sex == "2", type == "2"]) 
+women
+#Visualisierung 
+plot(women, 
+layout=layout_nicely, 
+vertex.label.color="gray20", 
+vertex.size=12, 
+vertex.color="indianred1", 
+vertex.frame.color="white", 
+edge.color="gray70", 
+vertex.label.dist=0, 
+vertex.label.fond=1.5, 
+edge.arrow.size=.2, 
+main="Frauen im Twitternetzwerk" 
+) 
+```
+```{r Netzwerkmaße berechnen}
+# Berechnung der Dichte des Twitternetzwerks - Anzahl der realisierten Beziehungen
+edge_density(p, loops=FALSE)
+#Berechnung Degree 
+degree(p)
+#Größte Pfaddistanz berechnen
+farthest_vertices(p)
+#Pfaddistanzen des gesamten Netzwerks als Matrix anzeigen
+distances(p, v = V(p), to = V(p))
+#Mittlere Pfaddistanz berchenen
+mean_distance(p)
+#Betweenness berechnen
+betweenness(p)
+#Closeness berechnen
+closeness(p)
+#Anzahl der größten Cliquen berechnen
+largest.cliques(p)
+#Anzahl der Triaden berechnen
+triad_census(p)
+#Anzahl der Dyaden berechnen
+dyad_census(p)
+#gibt an, welcher Knoten an wie vielen Dreiecken beteiligt ist
+count_triangles(p)
+```
+
+```{r Cluster Twitternetzwerk}
+cluster <- cluster_edge_betweenness(p) 
+#dendPlot(cluster, mode="hclust")
+#Visualisierung nach Clustern
+plot(cluster, p, 
+     edge.arrow.size=.02,
+     vertex.size=degree,
+     vertex.label.dist=15
+     
+      )
+```
+
+```{r Ego-Netzwerk Anabel Schunke}
+#Ego-Netzwerke Anabel Schunke isolieren, erster Grad
+ego_size(p)
+Schunke <- make_ego_graph(p, order = 1, nodes = V(p)$name == "Anabel Schunke", mode ="all")
+Schunke
+plot(Schunke[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray20",
+     vertex.size=12,
+     vertex.color="lightblue",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+    main="Ego-Netzwerk Anabel Schunke"
+     
+     )
+#Ego-Netzwerk Anabel Schunke isolieren, zweiter Grad
+Schunke2 <- make_ego_graph(p, order = 2, nodes = V(p)$name == "Anabel Schunke", mode ="all")
+plot(Schunke2[[1]], 
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray10",
+     vertex.label=NA,
+     vertex.size=10,
+     vertex.color="indianred1",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+    main="Ego-Netzwerk Anabel Schunke zweiten Grades"
+          )
+#Vergleich der beiden Netzwerke visualisieren
+par(mfrow=c(1,3))
+plot(Schunke[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray20",
+     vertex.size=12,
+     vertex.color="lightblue",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+    main="Ego-Netzwerk Anabel Schunke ersten Grades"
+)
+plot(Schunke2[[1]], 
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray10",
+     vertex.label=NA,
+     vertex.size=10,
+     vertex.color="indianred1",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+     main="Ego-Netzwerk Anabel Schunke zweiten Grades"
+    )
+par(mfrow=c(1,1))
+```
+```{r Anzahl der Knoten und Kanten von Anabel Schunke Ego-Netzwerken vergleichen}
+#Vergleich der Anzahl von Knoten und Kanten in beiden Netzwerken
+#Anzahl Kanten berechnen
+ecount(Schunke[[1]])
+ecount(Schunke2[[1]])
+#Anzahl der Knoten berechnen
+vcount(Schunke[[1]])
+vcount(Schunke2[[1]])
+```
+```{r Twitter-Netzwerk Lauren Southern}
+#Ego-Netzwerk Lauren Southern isolieren, erster Grad
+ego_size(p)
+Southern <- make_ego_graph(p, order = 1, nodes = V(p)$name == "Lauren Southern", mode ="all")
+Southern
+plot(Southern[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray20",
+     vertex.size=12,
+     vertex.color="lightblue",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+     main="Ego-Netzwerk Lauren Southern ersten Grades"
+     )
+#Ego-Netzwerke Lauren Southern isolieren, zweiter Grad
+ego_size(p)
+Southern2 <- make_ego_graph(p, order = 2 , nodes = V(p)$name == "Lauren Southern", mode ="all")
+Southern2
+plot(Southern2[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray10",
+     vertex.label=NA,
+     vertex.size=10,
+     vertex.color="indianred1",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+    main="Ego-Netzwerk Lauren Southern zweiten Grades")
+#Vergleich der beiden Netzwerke visualisieren
+par(mfrow=c(1,3))
+plot(Southern[[1]], 
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray20",
+     vertex.size=12,
+     vertex.color="lightblue",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+     main="Ego-Netzwerk Southern ersten Grades")
+plot(Southern2[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray10",
+     vertex.label=NA,
+     vertex.size=10,
+     vertex.color="indianred1",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+    main="Ego-Netzwerk Southern zweiten Grades")
+par(mfrow=c(1,1))
+```
+```{r Anzahl der Knoten und Kanten Ego-Netzwerk Lauren Southern vergleichen}
+#Anzahl Kanten berechnen
+ecount(Southern[[1]])
+ecount(Southern2[[1]])
+#Anzahl der Knoten berechnen
+vcount(Southern[[1]])
+vcount(Southern2[[1]])
+```
+```{r Ego-Netzwerk Henning Hoffgaard}
+#Ego-Netzwerk Henning Hoffgaard isolieren, erster Grad
+ego_size(p)
+Hoffgaard <- make_ego_graph(p, order = 1, nodes = V(p)$name == "Henning Hoffgaard", mode ="all")
+Hoffgaard
+plot(Hoffgaard[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray20",
+     vertex.size=12,
+     vertex.color="lightblue",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+     main="Ego-Netzwerk Henning Hoffgaard ersten Grades")
+#Ego-Netzwerk Henning Hoffgaard isolieren, erster Grad
+ego_size(p)
+Hoffgaard2 <- make_ego_graph(p, order = 2, nodes = V(p)$name == "Henning Hoffgaard", mode ="all")
+Hoffgaard2
+plot(Hoffgaard2[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray10",
+     vertex.label=NA,
+     vertex.size=10,
+     vertex.color="indianred1",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+    main="Ego-Netzwerk Hoffgaard zweiten Grades")
+#Vergleich der beiden Nedtzwerke visualisieren
+par(mfrow=c(1,3))
+plot(Hoffgaard[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray20",
+     vertex.size=12,
+     vertex.color="lightblue",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+     main="Ego-Netzwerk Hoffgaard ersten Grades")
+plot(Hoffgaard2[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray10",
+     vertex.label=NA,
+     vertex.size=10,
+     vertex.color="indianred1",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+     main="Ego-Netzwerk Hoffgaard zweiten Grades")
+par(mfrow=c(1,1))
+```
+```{r Anzahl der Knoten und Kanten von Henning Hoffgaard vergleichen}
+#Anzahl Kanten berechnen
+ecount(Hoffgaard[[1]])
+ecount(Hoffgaard2[[1]])
+#Anzahl der Knoten berechnen
+vcount(Hoffgaard[[1]])
+vcount(Hoffgaard2[[1]])
+```
+```{r Ego-Netzwerk Junge Freiheit}
+#Ego-Netzwerke Junge Freiheit isolieren, erster Grad 
+ego_size(p) 
+ego_JF <- make_ego_graph(p, order = 1, nodes = V(p)$name == "Verlag Antaios", mode ="all") 
+ego_JF 
+plot(ego_JF[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray20",
+     vertex.size=12,
+     vertex.color="lightblue",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+     main="Ego-Netzwerk Junge Freiheit ersten Grades") 
+#Ego-Netzwekr Junge Freiheit isolieren, zweiter Grad
+ego_size(p)
+ego_JF2 <- make_ego_graph(p, order = 2, nodes = V(p)$name == "Verlag Antaios", mode ="all") 
+ego_JF2
+plot(ego_JF2[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray10",
+     vertex.label=NA,
+     vertex.size=10,
+     vertex.color="indianred1",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+     main="Ego-Netzwerk Junge Freiheit zweiten Grades") 
+#Vergleich der beiden Netzwerke visualisiert
+par(mfrow=c(1,3)) 
+plot(ego_JF[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray20",
+     vertex.size=12,
+     vertex.color="lightblue",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+     main="Ego-Netzwerk Junge Freiheit ersten Grades")
+plot(ego_JF2[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray10",
+     vertex.label=NA,
+     vertex.size=10,
+     vertex.color="indianred1",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+     main="Ego-Netzwerk Junge Freiheit zweiten Grades")
+par(mfrow=c(1,1)) 
+``` 
+
+```{r Anzahl der Knoten und Kanten von Junge Freiheit im Vergleich}
+#Anzahl Kanten berechnen 
+ecount(ego_JF[[1]])
+ecount(ego_JF2[[1]])
+#Anzahl der Knoten berechnen 
+vcount(ego_JF2[[1]])
+vcount(ego_JF[[1]])  
+``` 
+
+```{r Ego-Netzwerk Brittany Pettibone}
+#Ego-Netztwerk Brittany Pettibone isolieren, erster Grad
+ego_size(p)
+Pettibone <- make_ego_graph(p, order = 1, nodes = V(p)$name == "Brittany Pettibone", mode ="all")
+plot(Pettibone[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray20",
+     vertex.size=12,
+     vertex.color="lightblue",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+     main="Ego-Netzwerk Brittany Pettibone ersten Grades")
+#Ego-Netzwerk Brittany Pettibone isolieren, zweiter Grad
+ego_size(p)
+Pettibone2 <- make_ego_graph(p, order = 2, nodes = V(p)$name == "Brittany Pettibone", mode ="all")
+plot(Pettibone2[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray10",
+     vertex.label=NA,
+     vertex.size=10,
+     vertex.color="indianred1",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+    main="Ego-Netzwerk Brittany Pettibone zweiten Grades")
+#Vergleich der beiden Netzwerke visualisert
+par(mfrow=c(1,3))
+plot(Pettibone[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray20",
+     vertex.size=12,
+     vertex.color="lightblue",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+     main="Ego-Netzwerk Pettibone ersten Grades")
+plot(Pettibone2[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray10",
+     vertex.label=NA,
+     vertex.size=10,
+     vertex.color="indianred1",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+     main="Ego-Netzwerk Pettibone zweiten Grades")
+par(mfrow=c(1,1))
+```
+```{r Anzahl der Knoten und Kanten von Brittany Pettibone im Vergleich}
+#Anzahl Kanten berechnen
+ecount(Pettibone[[1]])
+ecount(Pettibone2[[1]])
+#Anzahl der Knoten berechnen
+vcount(Pettibone[[1]])
+vcount(Pettibone2[[1]])
+```
+```{r Ego-Netzwerk Identitäre Bewegung Deutschland} 
+#Ego-Netzwerke IB Deutschland isolieren, ersten Grades 
+ego_size(p) 
+IBD <- make_ego_graph(p, order = 1, nodes = V(p)$name == "Identitaere Bewegung Deutschland", mode ="all") 
+IBD 
+plot(IBD[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray20",
+     vertex.size=12,
+     vertex.color="lightblue",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+     main="Ego-Netzwerk IB Deutschland ersten Grades") 
+#Ego-Netzwerk IB Deutschland isolieren, zweiter Grad
+ego_size(p)
+IBD2 <- make_ego_graph(p, order = 2, nodes = V(p)$name == "Identitaere Bewegung Deutschland", mode ="all") 
+plot(IBD2[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray10",
+     vertex.label=NA,
+     vertex.size=10,
+     vertex.color="indianred1",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+     main="Ego-Netzwerk IB Deutschland zweiten Grades") 
+#Vergleich der beiden Netzwerke visualisiert
+par(mfrow=c(1,3)) 
+plot(IBD[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray20",
+     vertex.size=12,
+     vertex.color="lightblue",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+     main="Ego-Netzwerk IB Deutschland ersten Grades") 
+plot(IBD2[[1]],
+     layout=layout_nicely,
+     edge.arrow.size=.2,
+     vertex.label.color="gray10",
+     vertex.label=NA,
+     vertex.size=10,
+     vertex.color="indianred1",
+     vertex.frame.color="white",
+     edge.color="gray70",
+     vertex.label.dist=0,
+     vertex.label.font=1.5,
+     main="Ego-Netzwerk IB Deutschland zweiten Grades") 
+par(mfrow=c(1,1)) 
+``` 
+```{r Anzahl der Knoten und Kanten von IB Deutschland im Vergleich} 
+#Anzahl Kanten berechnen 
+ecount(IBD[[1]]) 
+ecount(IBD2[[1]]) 
+#Anzahl der Knoten berechnen 
+vcount(IBD[[1]]) 
+vcount(IBD2[[1]])
+``` 
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
