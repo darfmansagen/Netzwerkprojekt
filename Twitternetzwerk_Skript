@@ -2,7 +2,6 @@
 title: "R Notebook"
 output: html_notebook
 ---
-
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
 
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
@@ -34,7 +33,7 @@ plot(p,
       edge.color="gray70",
       edge.arrow.size=.10,
       main="Twitternetzwerk",
-      sub="Verbindung der neuen Rechten über Twitter"
+      sub="Verbindung rechter Gruppierungen über Twitter"
      
     
 )
@@ -70,15 +69,15 @@ plot(pe,
       edge.color="gray70",
       edge.arrow.size=.10,
       main="Twitternetzwerk mit Degree",
-      sub="Verbindung der neuen Rechten über Twitter"
+      sub="Verbindung rechter Gruppierungen über Twitter"
       )
 ```
-
 
 ```{r Visualisierung mit VisNetwork}
 toVisNetworkData(p, idToLabel = TRUE)
 visIgraph(p)
 ```
+
 ```{r Twitter-Netzwerk nach Altersgruppen}
 #Akteure im Alter von 0 bis 30 Jahren 
 age1 <- delete_vertices(p, V(p)[age == "4", age == "5", age == "6", type == "2"]) 
@@ -112,7 +111,6 @@ main="Akteure ab 31 Jahren"
 ) 
 ```
 
-
 ```{r Frauen im Netzwerk}
 #Alle Männer und Organisationen aus dem Netzwerk isolieren
 women <- delete_vertices(p, V(p)[sex == "2", type == "2"]) 
@@ -125,12 +123,13 @@ vertex.size=12,
 vertex.color="indianred1", 
 vertex.frame.color="white", 
 edge.color="gray70", 
-vertex.label.dist=0, 
+vertex.label.dist=1, 
 vertex.label.fond=1.5, 
 edge.arrow.size=.2, 
 main="Frauen im Twitternetzwerk" 
 ) 
 ```
+
 ```{r Netzwerkmaße berechnen}
 # Berechnung der Dichte des Twitternetzwerks - Anzahl der realisierten Beziehungen
 edge_density(p, loops=FALSE)
@@ -163,7 +162,7 @@ cluster <- cluster_edge_betweenness(p)
 plot(cluster, p, 
      edge.arrow.size=.02,
      vertex.size=degree,
-     vertex.label.dist=15
+     vertex.label.dist=1
      
       )
 ```
@@ -239,6 +238,7 @@ ecount(Schunke2[[1]])
 vcount(Schunke[[1]])
 vcount(Schunke2[[1]])
 ```
+
 ```{r Twitter-Netzwerk Lauren Southern}
 #Ego-Netzwerk Lauren Southern isolieren, erster Grad
 ego_size(p)
@@ -256,6 +256,7 @@ plot(Southern[[1]],
      vertex.label.font=1.5,
      main="Ego-Netzwerk Lauren Southern ersten Grades"
      )
+
 #Ego-Netzwerke Lauren Southern isolieren, zweiter Grad
 ego_size(p)
 Southern2 <- make_ego_graph(p, order = 2 , nodes = V(p)$name == "Lauren Southern", mode ="all")
@@ -272,6 +273,7 @@ plot(Southern2[[1]],
      vertex.label.dist=0,
      vertex.label.font=1.5,
     main="Ego-Netzwerk Lauren Southern zweiten Grades")
+
 #Vergleich der beiden Netzwerke visualisieren
 par(mfrow=c(1,3))
 plot(Southern[[1]], 
@@ -285,6 +287,7 @@ plot(Southern[[1]],
      vertex.label.dist=0,
      vertex.label.font=1.5,
      main="Ego-Netzwerk Southern ersten Grades")
+
 plot(Southern2[[1]],
      layout=layout_nicely,
      edge.arrow.size=.2,
@@ -307,6 +310,7 @@ ecount(Southern2[[1]])
 vcount(Southern[[1]])
 vcount(Southern2[[1]])
 ```
+
 ```{r Ego-Netzwerk Henning Hoffgaard}
 #Ego-Netzwerk Henning Hoffgaard isolieren, erster Grad
 ego_size(p)
@@ -323,6 +327,7 @@ plot(Hoffgaard[[1]],
      vertex.label.dist=0,
      vertex.label.font=1.5,
      main="Ego-Netzwerk Henning Hoffgaard ersten Grades")
+
 #Ego-Netzwerk Henning Hoffgaard isolieren, erster Grad
 ego_size(p)
 Hoffgaard2 <- make_ego_graph(p, order = 2, nodes = V(p)$name == "Henning Hoffgaard", mode ="all")
@@ -339,6 +344,7 @@ plot(Hoffgaard2[[1]],
      vertex.label.dist=0,
      vertex.label.font=1.5,
     main="Ego-Netzwerk Hoffgaard zweiten Grades")
+
 #Vergleich der beiden Nedtzwerke visualisieren
 par(mfrow=c(1,3))
 plot(Hoffgaard[[1]],
@@ -352,6 +358,7 @@ plot(Hoffgaard[[1]],
      vertex.label.dist=0,
      vertex.label.font=1.5,
      main="Ego-Netzwerk Hoffgaard ersten Grades")
+
 plot(Hoffgaard2[[1]],
      layout=layout_nicely,
      edge.arrow.size=.2,
@@ -366,6 +373,7 @@ plot(Hoffgaard2[[1]],
      main="Ego-Netzwerk Hoffgaard zweiten Grades")
 par(mfrow=c(1,1))
 ```
+
 ```{r Anzahl der Knoten und Kanten von Henning Hoffgaard vergleichen}
 #Anzahl Kanten berechnen
 ecount(Hoffgaard[[1]])
@@ -374,10 +382,11 @@ ecount(Hoffgaard2[[1]])
 vcount(Hoffgaard[[1]])
 vcount(Hoffgaard2[[1]])
 ```
+
 ```{r Ego-Netzwerk Junge Freiheit}
 #Ego-Netzwerke Junge Freiheit isolieren, erster Grad 
 ego_size(p) 
-ego_JF <- make_ego_graph(p, order = 1, nodes = V(p)$name == "Verlag Antaios", mode ="all") 
+ego_JF <- make_ego_graph(p, order = 1, nodes = V(p)$name == "Junge Freiheit", mode ="all") 
 ego_JF 
 plot(ego_JF[[1]],
      layout=layout_nicely,
@@ -390,9 +399,9 @@ plot(ego_JF[[1]],
      vertex.label.dist=0,
      vertex.label.font=1.5,
      main="Ego-Netzwerk Junge Freiheit ersten Grades") 
-#Ego-Netzwekr Junge Freiheit isolieren, zweiter Grad
+#Ego-Netzwerk Junge Freiheit isolieren, zweiter Grad
 ego_size(p)
-ego_JF2 <- make_ego_graph(p, order = 2, nodes = V(p)$name == "Verlag Antaios", mode ="all") 
+ego_JF2 <- make_ego_graph(p, order = 2, nodes = V(p)$name == "Junge Freiheit", mode ="all") 
 ego_JF2
 plot(ego_JF2[[1]],
      layout=layout_nicely,
@@ -406,6 +415,7 @@ plot(ego_JF2[[1]],
      vertex.label.dist=0,
      vertex.label.font=1.5,
      main="Ego-Netzwerk Junge Freiheit zweiten Grades") 
+
 #Vergleich der beiden Netzwerke visualisiert
 par(mfrow=c(1,3)) 
 plot(ego_JF[[1]],
@@ -419,6 +429,7 @@ plot(ego_JF[[1]],
      vertex.label.dist=0,
      vertex.label.font=1.5,
      main="Ego-Netzwerk Junge Freiheit ersten Grades")
+
 plot(ego_JF2[[1]],
      layout=layout_nicely,
      edge.arrow.size=.2,
@@ -443,71 +454,6 @@ vcount(ego_JF2[[1]])
 vcount(ego_JF[[1]])  
 ``` 
 
-```{r Ego-Netzwerk Brittany Pettibone}
-#Ego-Netztwerk Brittany Pettibone isolieren, erster Grad
-ego_size(p)
-Pettibone <- make_ego_graph(p, order = 1, nodes = V(p)$name == "Brittany Pettibone", mode ="all")
-plot(Pettibone[[1]],
-     layout=layout_nicely,
-     edge.arrow.size=.2,
-     vertex.label.color="gray20",
-     vertex.size=12,
-     vertex.color="lightblue",
-     vertex.frame.color="white",
-     edge.color="gray70",
-     vertex.label.dist=0,
-     vertex.label.font=1.5,
-     main="Ego-Netzwerk Brittany Pettibone ersten Grades")
-#Ego-Netzwerk Brittany Pettibone isolieren, zweiter Grad
-ego_size(p)
-Pettibone2 <- make_ego_graph(p, order = 2, nodes = V(p)$name == "Brittany Pettibone", mode ="all")
-plot(Pettibone2[[1]],
-     layout=layout_nicely,
-     edge.arrow.size=.2,
-     vertex.label.color="gray10",
-     vertex.label=NA,
-     vertex.size=10,
-     vertex.color="indianred1",
-     vertex.frame.color="white",
-     edge.color="gray70",
-     vertex.label.dist=0,
-     vertex.label.font=1.5,
-    main="Ego-Netzwerk Brittany Pettibone zweiten Grades")
-#Vergleich der beiden Netzwerke visualisert
-par(mfrow=c(1,3))
-plot(Pettibone[[1]],
-     layout=layout_nicely,
-     edge.arrow.size=.2,
-     vertex.label.color="gray20",
-     vertex.size=12,
-     vertex.color="lightblue",
-     vertex.frame.color="white",
-     edge.color="gray70",
-     vertex.label.dist=0,
-     vertex.label.font=1.5,
-     main="Ego-Netzwerk Pettibone ersten Grades")
-plot(Pettibone2[[1]],
-     layout=layout_nicely,
-     edge.arrow.size=.2,
-     vertex.label.color="gray10",
-     vertex.label=NA,
-     vertex.size=10,
-     vertex.color="indianred1",
-     vertex.frame.color="white",
-     edge.color="gray70",
-     vertex.label.dist=0,
-     vertex.label.font=1.5,
-     main="Ego-Netzwerk Pettibone zweiten Grades")
-par(mfrow=c(1,1))
-```
-```{r Anzahl der Knoten und Kanten von Brittany Pettibone im Vergleich}
-#Anzahl Kanten berechnen
-ecount(Pettibone[[1]])
-ecount(Pettibone2[[1]])
-#Anzahl der Knoten berechnen
-vcount(Pettibone[[1]])
-vcount(Pettibone2[[1]])
-```
 ```{r Ego-Netzwerk Identitäre Bewegung Deutschland} 
 #Ego-Netzwerke IB Deutschland isolieren, ersten Grades 
 ego_size(p) 
@@ -521,9 +467,10 @@ plot(IBD[[1]],
      vertex.color="lightblue",
      vertex.frame.color="white",
      edge.color="gray70",
-     vertex.label.dist=0,
+     vertex.label.dist=1,
      vertex.label.font=1.5,
      main="Ego-Netzwerk IB Deutschland ersten Grades") 
+
 #Ego-Netzwerk IB Deutschland isolieren, zweiter Grad
 ego_size(p)
 IBD2 <- make_ego_graph(p, order = 2, nodes = V(p)$name == "Identitaere Bewegung Deutschland", mode ="all") 
@@ -538,7 +485,8 @@ plot(IBD2[[1]],
      edge.color="gray70",
      vertex.label.dist=0,
      vertex.label.font=1.5,
-     main="Ego-Netzwerk IB Deutschland zweiten Grades") 
+     main="Ego-Netzwerk IB Deutschland zweiten Grades")
+
 #Vergleich der beiden Netzwerke visualisiert
 par(mfrow=c(1,3)) 
 plot(IBD[[1]],
@@ -549,7 +497,7 @@ plot(IBD[[1]],
      vertex.color="lightblue",
      vertex.frame.color="white",
      edge.color="gray70",
-     vertex.label.dist=0,
+     vertex.label.dist=1,
      vertex.label.font=1.5,
      main="Ego-Netzwerk IB Deutschland ersten Grades") 
 plot(IBD2[[1]],
@@ -566,6 +514,7 @@ plot(IBD2[[1]],
      main="Ego-Netzwerk IB Deutschland zweiten Grades") 
 par(mfrow=c(1,1)) 
 ``` 
+
 ```{r Anzahl der Knoten und Kanten von IB Deutschland im Vergleich} 
 #Anzahl Kanten berechnen 
 ecount(IBD[[1]]) 
